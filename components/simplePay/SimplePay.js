@@ -47,7 +47,7 @@ export default function SimplePay({ cartTotalPrice, buyerInfo, cartData, }) {
       const contract = new ethers.Contract(contractAddress, abi, signer);
 
       const valueToSendInEther = cartTotalPrice / ethToUsdPrice; // Amount of Ether to send
-      const valueToSendInWei = ethers.utils.parseEther(valueToSendInEther.toString());
+      const valueToSendInWei = ethers.utils.parseUnits(valueToSendInEther.toString(), 18); // Assuming 18 decimals
 
 
       try {

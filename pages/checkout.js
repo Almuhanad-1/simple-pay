@@ -8,7 +8,7 @@ import Head from '../components/core/Head'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { useCart } from '../src/CartContext'
 import { useState } from 'react'
-import SimplePay from '../components/simplePay/simplePay';
+import SimplePay from '../components/simplePay/SimplePay';
 
 
 
