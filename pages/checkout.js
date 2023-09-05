@@ -59,21 +59,6 @@ const Checkout = () => {
 
   const processPayment = async (e) => {
     e.preventDefault()
-
-    const data = {
-      billing: { ...user },
-      payment: { ...card },
-      orders: [...cart]
-    }
-    if (!loading) {
-      startLoading()
-      //
-      setTimeout(() => {
-        console.log(data)
-        stopLoading()
-        setDialog(true)
-      }, 2000)
-    }
   }
 
   const cart = useCart()
@@ -252,7 +237,6 @@ const Checkout = () => {
                     variant="contained"
                     color="primary"
                     fullWidth
-                    disabled={hasEmptyVal(card) || hasEmptyVal(user)}
                     onClick={processPayment}
                     type="submit"
                     size="large"
